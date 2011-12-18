@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import simulaciones.Ejercicio4;
+import simulaciones.SimulacionEjercicio4;
 import simulaciones.SimulacionSevenEleven;
 
 /**
@@ -37,7 +37,7 @@ public class JPanelEjercicio4 extends javax.swing.JPanel {
     ArrayList<Float> numeros1;
     ArrayList<Float> numeros2;
     SimulacionSevenEleven sm;
-    Ejercicio4 e ;
+    SimulacionEjercicio4 e ;
     private int velocidad;
     /** Creates new form JPanelSevenEleven */
     public JPanelEjercicio4() {
@@ -257,7 +257,7 @@ public class JPanelEjercicio4 extends javax.swing.JPanel {
     private void jButtonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularActionPerformed
     if(numeros1!=null&&numeros2!=null &&!jTextFieldCorridas.getText().equalsIgnoreCase("")){
        jTextAreaResultado.setText("");
-       e = new Ejercicio4();
+       e = new SimulacionEjercicio4();
        e.setNumeros1(numeros1);
        e.setNumeros2(numeros2);
        e.setCorridas(Auxiliares.convertirStringAEntero(jTextFieldCorridas));

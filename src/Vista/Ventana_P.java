@@ -18,6 +18,7 @@
 
 package Vista;
 
+import GenaracionNumeros.NumerosRectangulares;
 import auxiliares.ModVentana;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,6 +34,7 @@ import javax.swing.JPanel;
 
 
 import javax.swing.UIManager;
+import simulaciones.distribuciones.Distribuciones;
 
 
 
@@ -82,6 +84,7 @@ public class Ventana_P extends javax.swing.JFrame {
         initComponents();
         this.setSize(800, 700);
         this.setResizable(false);
+        NumerosRectangulares n = new NumerosRectangulares();
         
         ModVentana.centrar(this);
     }

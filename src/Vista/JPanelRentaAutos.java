@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import simulaciones.RentaAutos;
+import simulaciones.SimulacionRentaAutos;
 import simulaciones.SimulacionSevenEleven;
 
 /**
@@ -274,7 +274,7 @@ public class JPanelRentaAutos extends javax.swing.JPanel {
     private void jButtonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularActionPerformed
     if(numeros1!=null&&numeros2!=null&&!jTextFieldDiasASimular.getText().equalsIgnoreCase("")
             &&!jTextFieldCorridas.getText().equalsIgnoreCase("")&&!jTextFieldAutosMaximosAProbar.getText().equalsIgnoreCase("")){
-        RentaAutos r = new RentaAutos();
+        SimulacionRentaAutos r = new SimulacionRentaAutos();
         r.setDiaRenPorAuto(numeros1);
         r.setNumAutoRenPorDia(numeros2);
         r.setDiasASimular(Auxiliares.convertirStringAEntero(jTextFieldDiasASimular));

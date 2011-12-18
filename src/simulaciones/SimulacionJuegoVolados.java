@@ -31,7 +31,7 @@ import javax.swing.JTextPane;
  *
  * @author warlock
  */
-public class JuegoVolados extends Thread{
+public class SimulacionJuegoVolados extends Thread{
     int apuesta;
     int cantidadInicial;
     int meta;
@@ -54,7 +54,7 @@ public class JuegoVolados extends Thread{
 //        this.corridas = corridas;
 //    }
 
-    public JuegoVolados() {
+    public SimulacionJuegoVolados() {
         
     }
 
@@ -82,7 +82,7 @@ public class JuegoVolados extends Thread{
                     try {
                          Thread.sleep(velocidad);
                     } catch (InterruptedException ex) {
-                         Logger.getLogger(JuegoVolados.class.getName()).log(Level.SEVERE, null, ex);
+                         Logger.getLogger(SimulacionJuegoVolados.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     auxCI+=auxApuesta;
                     auxApuesta=apuesta;
@@ -100,7 +100,7 @@ public class JuegoVolados extends Thread{
                     try {
                          Thread.sleep(velocidad);
                     } catch (InterruptedException ex) {
-                         Logger.getLogger(JuegoVolados.class.getName()).log(Level.SEVERE, null, ex);
+                         Logger.getLogger(SimulacionJuegoVolados.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     auxCI -= auxApuesta;
                     auxApuesta= auxApuesta *j;

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import simulaciones.Ruleta;
+import simulaciones.SimulacionRuleta;
 import simulaciones.SimulacionSevenEleven;
 
 /**
@@ -36,7 +36,7 @@ import simulaciones.SimulacionSevenEleven;
 public class JPanelRuleta extends javax.swing.JPanel {
     ArrayList<Float> numeros1;
     
-    Ruleta r;
+    SimulacionRuleta r;
     /** Creates new form JPanelSevenEleven */
     public JPanelRuleta() {
         initComponents();
@@ -297,7 +297,7 @@ public class JPanelRuleta extends javax.swing.JPanel {
     private void jButtonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularActionPerformed
     if(numeros1!=null&&!jTextFieldApuestaInicial.getText().equalsIgnoreCase("")
             &&!jTextFieldCorridas.getText().equalsIgnoreCase("")&&!jTextFieldMeta.getText().equalsIgnoreCase("")){
-            r = new Ruleta(numeros1, Auxiliares.convertirStringAEntero(jTextFieldApuestaInicial), 1,
+            r = new SimulacionRuleta(numeros1, Auxiliares.convertirStringAEntero(jTextFieldApuestaInicial), 1,
                     Auxiliares.convertirStringAEntero(jTextFieldCorridas), Auxiliares.convertirStringAEntero(jTextFieldMeta));
             r.setjListEstrategia1(jTextAreaEstrategia1);
             r.setjListEstrategia2(jTextAreaEstrategia2);

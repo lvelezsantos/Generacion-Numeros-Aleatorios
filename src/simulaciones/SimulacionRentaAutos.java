@@ -21,7 +21,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 
-public class RentaAutos extends Thread{
+public class SimulacionRentaAutos extends Thread{
     int balanceanual;
     int clienteInsatisfecho;
     int ocioso;
@@ -39,7 +39,7 @@ public class RentaAutos extends Thread{
     DefaultListModel dlmResultados;
     DefaultListModel dlmCorridas;
     
-    public RentaAutos(){
+    public SimulacionRentaAutos(){
         this.auto = new ArrayList<Auto>();
         dlmCorridas=new DefaultListModel();
         dlmResultados=new DefaultListModel();

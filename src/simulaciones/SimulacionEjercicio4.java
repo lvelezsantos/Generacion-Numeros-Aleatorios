@@ -23,12 +23,13 @@ import javax.swing.JList;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import simulaciones.distribuciones.Distribuciones;
 
 /**
  *
  * @author warlock
  */
-public class Ejercicio4 extends Thread{
+public class SimulacionEjercicio4 extends Thread{
     ArrayList<Float> numeros1;
     ArrayList<Float> numeros2;
     String respuestaA;
@@ -42,7 +43,7 @@ public class Ejercicio4 extends Thread{
     private JScrollPane jScrollPaneResultado;
     private int velocidad;
 
-    public Ejercicio4() {
+    public SimulacionEjercicio4() {
 
     }
 
@@ -51,24 +52,25 @@ public class Ejercicio4 extends Thread{
         boton.setEnabled(false);
         simularPuntoB();
         simularPuntoA();
-        
+        //Vista
         listaResultados.append(respuestaA+"\n");
         listaResultados.append(respuestaB+"\n");
+        
         Dimension tamanhoTextArea = listaResultados.getSize();
         Point p = new Point(0,tamanhoTextArea.height);
         jScrollPaneResultado.getViewport().setViewPosition(p);
         
         boton.setEnabled(true);
     }
-    public double distribucionNormal(double media, double varianza,ArrayList<Float> num){
-        double resultado = 0;
-        double sumatoria=0;
-        for(int i=0;i<num.size();i++)
-            sumatoria+=num.get(i);
-
-        resultado=media+(varianza*(sumatoria-6));
-        return resultado;
-    }
+//    public double distribucionNormal(double media, double varianza,ArrayList<Float> num){
+//        double resultado = 0;
+//        double sumatoria=0;
+//        for(int i=0;i<num.size();i++)
+//            sumatoria+=num.get(i);
+//
+//        resultado=media+(varianza*(sumatoria-6));
+//        return resultado;
+//    }
 
     public void simularPuntoB(){
         int i=0;
@@ -86,8 +88,8 @@ public class Ejercicio4 extends Thread{
                 x1.add(this.numeros1.get(m));
                 x2.add(this.numeros2.get(m));
             }
-            double varX1=distribucionNormal(1.5, 0.0016, x1);
-            double varX2=distribucionNormal(1.48, 0.0009, x2);
+            double varX1=Distribuciones.distribucionNormal(1.5, 0.0016, x1);
+            double varX2=Distribuciones.distribucionNormal(1.48, 0.0009, x2);
             double dif = varX1-varX2;
             System.out.println("Ejercicio b:"+dif);
             listaResultados.append("Ejercicio b:"+dif+"\n");
@@ -113,7 +115,7 @@ public class Ejercicio4 extends Thread{
             try {
                 Thread.sleep(velocidad);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Ejercicio4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SimulacionEjercicio4.class.getName()).log(Level.SEVERE, null, ex);
             }
             ArrayList<Float> x1 = new ArrayList();
             ArrayList<Float> x2 = new ArrayList();
@@ -124,8 +126,8 @@ public class Ejercicio4 extends Thread{
                 x1.add(this.numeros1.get(m));
                 x2.add(this.numeros2.get(m));
             }
-            double varX1=distribucionNormal(1.5, 0.0016, x1);
-            double varX2=distribucionNormal(1.48, 0.0009, x2);
+            double varX1=Distribuciones.distribucionNormal(1.5, 0.0016, x1);
+            double varX2=Distribuciones.distribucionNormal(1.48, 0.0009, x2);
             if(varX2>=varX1){
                 listaResultados.append("Hay Interferencia: "+(varX1-varX2)+"\n");
                 Dimension tamanhoTextArea = listaResultados.getSize();

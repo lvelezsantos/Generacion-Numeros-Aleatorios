@@ -31,7 +31,7 @@ import javax.swing.JTextArea;
  *
  * @author KARLOS
  */
-public class Ruleta extends Thread {
+public class SimulacionRuleta extends Thread {
     ArrayList<Float> numeros;
     JTextArea listaEstrategia1;
     JTextArea listaEstrategia2;
@@ -53,7 +53,7 @@ public class Ruleta extends Thread {
 //    private final URL colorVerde;
     private JProgressBar jp;
 
-    public Ruleta(ArrayList<Float> numeros, int cantidadInicial, int valorDeApuesta,  int corridas,int meta) {
+    public SimulacionRuleta(ArrayList<Float> numeros, int cantidadInicial, int valorDeApuesta,  int corridas,int meta) {
         this.numeros = numeros;
         this.cantidadInicial = cantidadInicial;
         this.valorDeApuesta = valorDeApuesta;
@@ -162,7 +162,7 @@ public class Ruleta extends Thread {
                      try {
                         Thread.sleep(velocidad);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(Ruleta.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(SimulacionRuleta.class.getName()).log(Level.SEVERE, null, ex);
                     }
                      i++;
                 }
@@ -254,7 +254,7 @@ public class Ruleta extends Thread {
                     try {
                         Thread.sleep(velocidad);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(Ruleta.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(SimulacionRuleta.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 if(gana){

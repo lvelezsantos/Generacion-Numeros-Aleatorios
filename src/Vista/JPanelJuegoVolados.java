@@ -20,14 +20,14 @@ package Vista;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
-import simulaciones.JuegoVolados;
+import simulaciones.SimulacionJuegoVolados;
 import auxiliares.Auxiliares;
 import auxiliares.LimitadorSoloNumerosNumMaxCaracteres;
 import javax.swing.JOptionPane;
 
 public class JPanelJuegoVolados extends javax.swing.JPanel {
     ArrayList<Float> numeros;
-    JuegoVolados jv;
+    SimulacionJuegoVolados jv;
     ArrayList<String> corridas;
     int velocidad=0;
     /** Creates new form JPanelJuegoVolados */
@@ -217,7 +217,7 @@ public class JPanelJuegoVolados extends javax.swing.JPanel {
         if(!jTextFieldApuestaInicial.getText().equalsIgnoreCase("")&&!jTextFieldCantidadInicial.getText().equalsIgnoreCase("")&&
                 !jTextFieldCorridas.getText().equalsIgnoreCase("")&&!jTextFieldMeta.getText().equalsIgnoreCase("")){
         if(!numeros.isEmpty()){
-            jv =  new JuegoVolados();
+            jv =  new SimulacionJuegoVolados();
             jv.setApuesta(Auxiliares.convertirStringAEntero(jTextFieldApuestaInicial));
             jv.setCantidadInicial(Auxiliares.convertirStringAEntero(jTextFieldCantidadInicial));
             jv.setMeta(Auxiliares.convertirStringAEntero(jTextFieldMeta));
