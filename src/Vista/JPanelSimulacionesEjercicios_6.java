@@ -32,13 +32,13 @@ import simulaciones.SimulacionEjercicio6;
  *
  * @author warlock
  */
-public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
+public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
     ArrayList<Float> numeros1;
     ArrayList<Float> numeros2;
     private int velocidad;
     SimulacionEjercicio6 sim;
     /** Creates new form JPanelSimulacionInventario */
-    public JPanelSimulacionesEjercicios_6_16() {
+    public JPanelSimulacionesEjercicios_6() {
         velocidad =0;
         initComponents();
 
@@ -56,9 +56,6 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -69,7 +66,7 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jCheckBoxRapido = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldCorridas = new javax.swing.JTextField();
         jButtonSimular = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -83,17 +80,6 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
 
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList1);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/iconos/1317343951_project-open.png"))); // NOI18N
-        jButton2.setToolTipText("Importar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jList2);
 
         jLabel2.setText("Corridas");
 
@@ -122,7 +108,7 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
 
         jLabel3.setText("Numero de Corridas");
 
-        jTextField2.setDocument(new LimitadorSoloNumerosNumMaxCaracteres(jTextField2, 6));
+        jTextFieldCorridas.setDocument(new LimitadorSoloNumerosNumMaxCaracteres(jTextFieldCorridas, 6));
 
         jButtonSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/iconos/1317344174_play.png"))); // NOI18N
         jButtonSimular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -147,7 +133,7 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                            .addComponent(jTextFieldCorridas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jCheckBoxRapido, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -162,7 +148,7 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldCorridas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBoxRapido)
                 .addGap(34, 34, 34)
@@ -183,12 +169,10 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)))
+                                .addGap(170, 170, 170)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -204,11 +188,6 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
                     .addComponent(jScrollPaneResultados, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE))
                 .addContainerGap())
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -229,13 +208,9 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
                                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPaneResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -271,51 +246,20 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JFileChooser jf = new JFileChooser();
-        jf.setMultiSelectionEnabled(false);
-        int r =jf.showOpenDialog(jf);
-        if(r == JFileChooser.APPROVE_OPTION){
-             ObjectInputStream entrada;
-            try {
-                entrada = new ObjectInputStream(new FileInputStream(jf.getSelectedFile()));
-                numeros2 = (ArrayList<Float>) entrada.readObject();
-                System.out.println(numeros2.size());
-                if(!numeros2.isEmpty()){
-                    JOptionPane.showMessageDialog(null, "Lista de números importado con éxito");
-                    DefaultListModel lm = new DefaultListModel();
-                    jList2.setModel(lm);
-                    for(int i=0;i<numeros2.size();i++){
-                        lm.addElement((i+1)+": "+numeros2.get(i));
-                    }
-                    jList2.setModel(lm);
-                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error al importar el archivo");
-            }
-
-
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButtonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimularActionPerformed
-
-        if(!jTextField1.getText().equalsIgnoreCase("")&&!jTextField2.getText().equalsIgnoreCase("")){
+        
+        if(!jTextFieldCorridas.getText().equalsIgnoreCase("")&&numeros1!=null){
             jTextAreaCorridas.setText("");
             jTextAreaResultados.setText("");
-            sim = new SimulacionInventario((float) 0.5, 6, 3,auxiliares.Auxiliares.convertirStringAEntero(jTextField2));
-            sim.distribucionBinomial();
-            sim.distribucionPoisson();
+            sim = new  SimulacionEjercicio6();
             sim.setjScrollPaneResultado(jScrollPaneResultados);
             sim.setjScrollPaneCorridas(jScrollPaneCorridas);
             sim.setJp(jProgressBar1);
-            sim.setBin(numeros1);
-            sim.setPois(numeros2);
-            sim.setDias(auxiliares.Auxiliares.convertirStringAEntero(jTextField1));
-            sim.setListaResultado(jTextAreaResultados) ;
+            sim.setNumeros1(numeros1);
+            sim.setCorridas(auxiliares.Auxiliares.convertirStringAEntero(jTextFieldCorridas)); 
+            sim.setListaResultados(jTextAreaResultados) ;
             sim.setBoton(jButtonSimular);
             sim.setListaCorridas(jTextAreaCorridas) ;
-            sim.setJtextArea(jTextArea1);
             sim.setVelocidad(velocidad);
 
             sim.start();
@@ -334,7 +278,7 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
 //                    + "El porcetaje para 8 dias es: "+aux2+"%" +"\n"+economica);
 //            DefaultListModel lm = new DefaultListModel();
 //            jList3.setModel(lm);
-//            ArrayList<String> cor = sim.getCorridas();
+//            ArrayList<String> cojPanelEjercicio6r = sim.getCorridas();
 //            for(int i=0;i<cor.size();i++){
 //                 lm.addElement(cor.get(i));
 //             }
@@ -367,7 +311,6 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonSimular;
     private javax.swing.JCheckBox jCheckBoxRapido;
@@ -375,16 +318,14 @@ public class JPanelSimulacionesEjercicios_6_16 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPaneCorridas;
     private javax.swing.JScrollPane jScrollPaneResultados;
     private javax.swing.JTextArea jTextAreaCorridas;
     private javax.swing.JTextArea jTextAreaResultados;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldCorridas;
     // End of variables declaration//GEN-END:variables
 
 }

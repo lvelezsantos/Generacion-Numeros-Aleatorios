@@ -44,7 +44,7 @@ import simulaciones.distribuciones.Distribuciones;
  */
 public class Ventana_P extends javax.swing.JFrame {
 
-
+    JPanelSimulacionesEjercicios_6 jPanelSimulacionesEjercicios6;
     JPanelGenerador jPanelGenerador;
     JPanelPrueba_Est jPanelPrueba_Est;
     JPanelInformacion jPanelInformacion;
@@ -79,6 +79,7 @@ public class Ventana_P extends javax.swing.JFrame {
         jPanelSevenEleven = new JPanelSevenEleven();
         jPanelRuleta = new JPanelRuleta();
         jPanelEjercicio4 = new JPanelEjercicio4();
+        jPanelSimulacionesEjercicios6 = new JPanelSimulacionesEjercicios_6();
        
         numeros = new ArrayList<Float>();
         initComponents();
@@ -118,6 +119,8 @@ public class Ventana_P extends javax.swing.JFrame {
         jMenuItemRentaAutos = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItemInventario = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItemEjercicio6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemAyuda = new javax.swing.JMenuItem();
 
@@ -182,7 +185,7 @@ public class Ventana_P extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu5.setText("Simulaciones");
+        jMenu5.setText("Simulaciones 1-5");
 
         jMenuItemJuegoVolados.setText("Juego de los Volados");
         jMenuItemJuegoVolados.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +236,18 @@ public class Ventana_P extends javax.swing.JFrame {
         jMenu5.add(jMenuItemInventario);
 
         jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Simulaciones 6-10");
+
+        jMenuItemEjercicio6.setText("Ejercicio 6");
+        jMenuItemEjercicio6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEjercicio6ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItemEjercicio6);
+
+        jMenuBar1.add(jMenu6);
 
         jMenu2.setText("Ayuda");
 
@@ -356,6 +371,10 @@ public class Ventana_P extends javax.swing.JFrame {
        setPanel(jPanelEjercicio4);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItemEjercicio6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEjercicio6ActionPerformed
+       setPanel(jPanelSimulacionesEjercicios6);
+    }//GEN-LAST:event_jMenuItemEjercicio6ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -376,6 +395,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
@@ -384,6 +404,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItemAyuda;
+    private javax.swing.JMenuItem jMenuItemEjercicio6;
     private javax.swing.JMenuItem jMenuItemImportar;
     private javax.swing.JMenuItem jMenuItemInventario;
     private javax.swing.JMenuItem jMenuItemJuegoVolados;

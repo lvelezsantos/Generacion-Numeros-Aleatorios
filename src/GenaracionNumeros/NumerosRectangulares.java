@@ -238,7 +238,7 @@ public class NumerosRectangulares {
                 x=r;
                 float resultado=(float)r/m;
                 nums.add(new Float(resultado));
-    //            System.out.println(resultado);
+                //System.out.println(i);
                 i++;
             }while(i<m);
         }

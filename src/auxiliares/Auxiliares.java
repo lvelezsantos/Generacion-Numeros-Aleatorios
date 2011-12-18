@@ -14,7 +14,10 @@ package auxiliares;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
+import simulaciones.SimulacionInventario;
 
 /**
  *
@@ -152,5 +155,13 @@ public class Auxiliares {
              System.err.println("Error Convertir String a Entero");
          }
          return num;
+     }
+     
+     public static void dormirHilo(int velocidad){
+         try {
+                    Thread.sleep(velocidad);
+         } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+         }
      }
 }

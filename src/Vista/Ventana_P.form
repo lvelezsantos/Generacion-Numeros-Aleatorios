@@ -85,7 +85,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Simulaciones"/>
+            <Property name="text" type="java.lang.String" value="Simulaciones 1-5"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemJuegoVolados">
@@ -134,6 +134,21 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemInventarioActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Simulaciones 6-10"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemEjercicio6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ejercicio 6"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemEjercicio6ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
