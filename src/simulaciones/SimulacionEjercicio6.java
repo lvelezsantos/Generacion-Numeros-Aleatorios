@@ -50,7 +50,9 @@ public class SimulacionEjercicio6 extends Thread{
     @Override
     public void run(){
         jp.setString("Simulando: 0 %");
-        
+        boton.setEnabled(false); 
+        int estUno=0;
+        int estTodos=0;
         for (int i=0;i<corridas;i++){
             try {
                 estrategiaCambioTodos();
@@ -58,8 +60,10 @@ public class SimulacionEjercicio6 extends Thread{
                 String estrategiaGanadora="";
                 if(costoEstrategiaTodos<costoEstrategiaUno){
                     estrategiaGanadora="Estrategia todos: "+costoEstrategiaTodos +"<"+"Estrategia uno: "+costoEstrategiaUno+"\n"; 
+                    estTodos++;
                 }else if(costoEstrategiaTodos>costoEstrategiaUno){
                     estrategiaGanadora="Estrategia todos: "+costoEstrategiaTodos +">"+"Estrategia uno: "+costoEstrategiaUno+"\n"; 
+                    estUno++;
                 }else {
                     estrategiaGanadora="Estrategia todos: "+costoEstrategiaTodos +"="+"Estrategia uno: "+costoEstrategiaUno+"\n"; 
                 }
@@ -76,6 +80,19 @@ public class SimulacionEjercicio6 extends Thread{
                 listaResultados.setText("");
             }
         }
+        if(estTodos>estUno){
+            listaResultados.append("La estrategia de cambiar todos es mejor\n");
+            Dimension tamanhoTextArea = listaResultados.getSize();
+            Point p = new Point(0,tamanhoTextArea.height);
+            jScrollPaneResultado.getViewport().setViewPosition(p);
+        }else{
+            listaResultados.append("La estrategia de cambiar solo la pieza dañada es mejor\n");
+            Dimension tamanhoTextArea = listaResultados.getSize();
+            Point p = new Point(0,tamanhoTextArea.height);
+            jScrollPaneResultado.getViewport().setViewPosition(p);
+        }
+        
+        boton.setEnabled(true); 
         
     }
     
@@ -133,8 +150,6 @@ public class SimulacionEjercicio6 extends Thread{
 //            jScrollPaneResultado.getViewport().setViewPosition(p);
         }
         listaResultados.append("Costo total para cambio de todos los equipos: "+costoEstrategiaTodos+"\n");
-
-
         Dimension tamanhoTextArea = listaResultados.getSize();
         Point p = new Point(0,tamanhoTextArea.height);
         jScrollPaneResultado.getViewport().setViewPosition(p);
