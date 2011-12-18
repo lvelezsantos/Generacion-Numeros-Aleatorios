@@ -24,21 +24,19 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import simulaciones.SimulacionInventario;
 import auxiliares.LimitadorSoloNumerosNumMaxCaracteres;
-import simulaciones.SimulacionEjercicio6;
+import simulaciones.SimulacionEjercicio7;
 
 /**
  *
  * @author warlock
  */
-public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
+public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
     ArrayList<Float> numeros1;
-    ArrayList<Float> numeros2;
     private int velocidad;
-    SimulacionEjercicio6 sim;
+    SimulacionEjercicio7 sim;
     /** Creates new form JPanelSimulacionInventario */
-    public JPanelSimulacionesEjercicios_6() {
+    public JPanelSimulacionesEjercicio7() {
         velocidad =0;
         initComponents();
 
@@ -245,7 +243,7 @@ public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
         if(!jTextFieldCorridas.getText().equalsIgnoreCase("")&&numeros1!=null){
             jTextAreaCorridas.setText("");
             jTextAreaResultados.setText("");
-            sim = new  SimulacionEjercicio6();
+            sim = new  SimulacionEjercicio7();
             sim.setjScrollPaneResultado(jScrollPaneResultados);
             sim.setjScrollPaneCorridas(jScrollPaneCorridas);
             sim.setJp(jProgressBar1);
@@ -257,27 +255,7 @@ public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
             sim.setVelocidad(velocidad);
 
             sim.start();
-//            float aux1=((float)sim.getAcum30()/sim.getNumCorridas())*100;
-//            float aux2=((float)sim.getAcum8()/sim.getNumCorridas())*100;
-//            String economica;
-//            if(sim.getAcum30()>sim.getAcum8()){
-//                economica="Es mas economica la compra cada 8 dias";
-//            }else{
-//                economica="Es mas economica la compra cada 30 articulos";
-//            }
-//            jTextArea1.setText("Resultados\n\nPara cada 30 Articulos el numero\nde veces"
-//                    + "que fue mayor es: "+sim.getAcum30()+
-//                    "\nPara cada 8 dias el numero\nde veces que fue mayor es: "+sim.getAcum8()+""
-//                    + "\nEl porcentaje para 30 articulos es:"+aux1+"%\n"
-//                    + "El porcetaje para 8 dias es: "+aux2+"%" +"\n"+economica);
-//            DefaultListModel lm = new DefaultListModel();
-//            jList3.setModel(lm);
-//            ArrayList<String> cojPanelEjercicio6r = sim.getCorridas();
-//            for(int i=0;i<cor.size();i++){
-//                 lm.addElement(cor.get(i));
-//             }
-//            jList3.setModel(lm);
-
+           
         }else{
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }
