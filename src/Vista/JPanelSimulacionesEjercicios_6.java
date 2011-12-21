@@ -39,9 +39,8 @@ public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
     SimulacionEjercicio6 sim;
     /** Creates new form JPanelSimulacionInventario */
     public JPanelSimulacionesEjercicios_6() {
-        velocidad =0;
         initComponents();
-
+        cambiarVelocidad();
     }
 
     /** This method is called from within the constructor to

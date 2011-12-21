@@ -58,6 +58,7 @@ public class Ventana_P extends javax.swing.JFrame {
     JPanelSimulacionesEjercicio7 jPanelSimulacionesEjercicio7;
     JPanelEjercicio10 jPanelEjercicio10;
     JPanelEjercicio11 jPanelEjercicio11;
+    JPanelEjercicio15 jPanelEjercicio15;
     ArrayList<Float> numeros;
     gui ejercicio13;
     /** Creates new form Ventana_P */
@@ -88,6 +89,7 @@ public class Ventana_P extends javax.swing.JFrame {
         jPanelSimulacionesEjercicio7 = new JPanelSimulacionesEjercicio7();
         jPanelEjercicio10 = new JPanelEjercicio10();
         jPanelEjercicio11 = new JPanelEjercicio11();
+        jPanelEjercicio15 = new JPanelEjercicio15();
         numeros = new ArrayList<Float>();
         initComponents();
         this.setSize(800, 700);
@@ -133,6 +135,7 @@ public class Ventana_P extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItemEjercicio13 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemAyuda = new javax.swing.JMenuItem();
 
@@ -300,6 +303,14 @@ public class Ventana_P extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItemEjercicio13);
 
+        jMenuItem5.setText("Ejercicio 15");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem5);
+
         jMenuBar1.add(jMenu7);
 
         jMenu2.setText("Ayuda");
@@ -450,6 +461,10 @@ public class Ventana_P extends javax.swing.JFrame {
         setPanel(jPanelEjercicio11); 
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        setPanel(jPanelEjercicio15);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -481,6 +496,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItemAyuda;
     private javax.swing.JMenuItem jMenuItemEjercicio13;
     private javax.swing.JMenuItem jMenuItemEjercicio6;

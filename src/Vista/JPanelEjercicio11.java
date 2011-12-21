@@ -42,8 +42,8 @@ public class JPanelEjercicio11 extends javax.swing.JPanel {
     private int velocidad;
     /** Creates new form JPanelSevenEleven */
     public JPanelEjercicio11() {
-        velocidad=0;
         initComponents();
+        cambiarVelocidad();
     }
 
     /** This method is called from within the constructor to

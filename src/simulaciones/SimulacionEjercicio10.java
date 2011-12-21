@@ -63,6 +63,7 @@ public class SimulacionEjercicio10 extends Thread{
     
     @Override
     public void run(){
+        boton.setEnabled(false);
         cantidadOrdenar =1; //valores iniciales
         nivelReorden=1; 
         for(int i=1;i<=valorMaximoAEvaluar;i++){//q -CantidadOrdenar
@@ -103,6 +104,7 @@ public class SimulacionEjercicio10 extends Thread{
         Dimension tamanhoTextArea = listaResultados.getSize();
         Point p = new Point(0,tamanhoTextArea.height);
         jScrollPaneResultado.getViewport().setViewPosition(p);
+        boton.setEnabled(true);
     }
     
     private void simular(){
