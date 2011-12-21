@@ -105,10 +105,10 @@ public class SimulacionEjercicio15 extends Thread{
             camionesAjenos = (camionesAjenos<1)?0:camionesAjenos;
             gastoCamionesAjenos=toneladasPorCamion*camionesAjenos*costoCamionAjeno;
             gastoTotal+=gastoCamionesAjenos;
-            listaResultados.append("Toneladas Dia: "+toneladaDiaria+"\n");
-            listaResultados.append("Toneladas Por Camion: "+toneladasPorCamion+"\n");
-            listaResultados.append("Camiones Necesario Dia: "+camionesNecesarios+"\n");
-            listaResultados.append("Camiones Ajenos Dia: "+camionesAjenos+"\n");
+//            listaResultados.append("Toneladas Dia: "+toneladaDiaria+"\n");
+//            listaResultados.append("Toneladas Por Camion: "+toneladasPorCamion+"\n");
+//            listaResultados.append("Camiones Necesario Dia: "+camionesNecesarios+"\n");
+//            listaResultados.append("Camiones Ajenos Dia: "+camionesAjenos+"\n");
             Dimension tamanhoTextArea = listaResultados.getSize();
             Point p = new Point(0,tamanhoTextArea.height);
             jScrollPaneResultado.getViewport().setViewPosition(p);

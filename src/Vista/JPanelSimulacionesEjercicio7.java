@@ -87,7 +87,7 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Inventario");
+        jLabel4.setText("Ejercicio 7");
 
         jProgressBar1.setString("Simular");
         jProgressBar1.setStringPainted(true);
@@ -187,7 +187,7 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPaneResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

@@ -84,7 +84,7 @@ public class JPanelSimulacionesEjercicios_6 extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Inventario");
+        jLabel4.setText("Ejercicio 6");
 
         jProgressBar1.setString("Simular");
         jProgressBar1.setStringPainted(true);
