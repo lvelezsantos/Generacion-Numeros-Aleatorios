@@ -35,6 +35,7 @@ import javax.swing.JPanel;
 
 import javax.swing.UIManager;
 import simulaciones.distribuciones.Distribuciones;
+import vista.gui;
 
 
 
@@ -57,6 +58,7 @@ public class Ventana_P extends javax.swing.JFrame {
     JPanelSimulacionesEjercicio7 jPanelSimulacionesEjercicio7;
     JPanelEjercicio10 jPanelEjercicio10;
     ArrayList<Float> numeros;
+    gui ejercicio13;
     /** Creates new form Ventana_P */
 
 
@@ -126,6 +128,8 @@ public class Ventana_P extends javax.swing.JFrame {
         jMenuItemEjercicio6 = new javax.swing.JMenuItem();
         jMenuItemEjercicio7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItemEjercicio13 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemAyuda = new javax.swing.JMenuItem();
 
@@ -270,6 +274,23 @@ public class Ventana_P extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu6);
 
+        jMenu7.setText("Ejercicios 11-16");
+        jMenu7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu7ActionPerformed(evt);
+            }
+        });
+
+        jMenuItemEjercicio13.setText("Ejercicio 13");
+        jMenuItemEjercicio13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEjercicio13ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItemEjercicio13);
+
+        jMenuBar1.add(jMenu7);
+
         jMenu2.setText("Ayuda");
 
         jMenuItemAyuda.setText("Ayuda");
@@ -404,6 +425,16 @@ public class Ventana_P extends javax.swing.JFrame {
         setPanel(jPanelEjercicio10); 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenu7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu7ActionPerformed
+        
+    }//GEN-LAST:event_jMenu7ActionPerformed
+
+    private void jMenuItemEjercicio13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEjercicio13ActionPerformed
+        ejercicio13 = new gui();
+        
+        
+    }//GEN-LAST:event_jMenuItemEjercicio13ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -425,6 +456,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
@@ -434,6 +466,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItemAyuda;
+    private javax.swing.JMenuItem jMenuItemEjercicio13;
     private javax.swing.JMenuItem jMenuItemEjercicio6;
     private javax.swing.JMenuItem jMenuItemEjercicio7;
     private javax.swing.JMenuItem jMenuItemImportar;
