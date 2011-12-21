@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
  *
  * @author warlock
  */
-public class SimulacionEjercicio10 extends Thread{
+public class SimulacionEjercicio11 extends Thread{
     
     ArrayList<Float> numeros1;
     ArrayList<Float> numeros2;
@@ -40,7 +40,8 @@ public class SimulacionEjercicio10 extends Thread{
     int inventarioInicial;
     int costoOrdenar;
     int costoInventarioUnidadAnio;
-    int costoFaltante;
+    int costoFaltanteSinEspera;
+    int costoFaltanteConEspera;
     int diasDeTrabajo;
     int inventarioFinal;
     int gastoTotal;
@@ -49,11 +50,12 @@ public class SimulacionEjercicio10 extends Thread{
     int valorMaximoAEvaluar;
     
     ArrayList<Gastos> todosLosGastos;
-    public SimulacionEjercicio10() {
-        costoOrdenar=50;
-        costoFaltante=25;
-        costoInventarioUnidadAnio=26;
-        inventarioInicial=15;
+    public SimulacionEjercicio11() {
+        costoOrdenar=100;
+        costoFaltanteSinEspera=50;
+        costoInventarioUnidadAnio=52;
+        costoFaltanteConEspera=20;
+        inventarioInicial=100;
         diasDeTrabajo=260;
         todosLosGastos = new ArrayList<Gastos>();
     }
@@ -76,9 +78,9 @@ public class SimulacionEjercicio10 extends Thread{
                 Point p = new Point(0,tamanhoTextArea.height);
                 jScrollPaneResultado.getViewport().setViewPosition(p);
                 try {
-                Thread.sleep(velocidad);
+                    Thread.sleep(velocidad);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(SimulacionEjercicio10.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(SimulacionEjercicio11.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             float value=(float)(i)/valorMaximoAEvaluar;
@@ -126,12 +128,13 @@ public class SimulacionEjercicio10 extends Thread{
             }else{
                 cantidadFaltante += cantidadDiaria -inventarioFinal;
                 this.cantidadFaltanteTotal += (cantidadDiaria -inventarioFinal);
-                this.gastoTotal += (cantidadDiaria -inventarioFinal) * costoFaltante;
+                this.gastoTotal += (cantidadDiaria -inventarioFinal) * costoFaltanteSinEspera;
             }
             
             
             //ordenar
           
+            
             
             if(diasDeEntrega>0){
                 diasDeEntrega--;
@@ -149,6 +152,12 @@ public class SimulacionEjercicio10 extends Thread{
                 gastoTotal += costoOrdenar;
             }
             
+            if(inventarioFinal<=0&&(diasDeEntrega<=esperaDias(i))){
+                gastoTotal +=costoFaltanteConEspera*cantidadDiaria;
+            }else if(inventarioFinal<=0&&(diasDeEntrega>=esperaDias(i))){
+                gastoTotal +=costoFaltanteSinEspera*cantidadDiaria;
+            }
+            
             
             System.out.println("Inventario Final"+ inventarioFinal);
             System.out.println("Faltante"+ cantidadFaltante);
@@ -162,24 +171,26 @@ public class SimulacionEjercicio10 extends Thread{
     
     private int demandaDiaria(double num){
         int demandaDiaria=0;
-        if(verificaSiEstaEntreDos(num, 0.0, 0.04)){
-            demandaDiaria=0;
-        }else if(verificaSiEstaEntreDos(num, 0.04, 0.1)){
-            demandaDiaria=1;
-        }else if(verificaSiEstaEntreDos(num, 0.1, 0.2)){
-            demandaDiaria=2;
-        }else if(verificaSiEstaEntreDos(num, 0.2, 0.4)){
-            demandaDiaria=3;
-        }else if(verificaSiEstaEntreDos(num, 0.4, 0.7)){
-            demandaDiaria=4;
-        }else if(verificaSiEstaEntreDos(num, 0.7, 0.88)){
-            demandaDiaria=5;
-        }else if(verificaSiEstaEntreDos(num, 0.88, 0.96)){
-            demandaDiaria=6;
-        }else if(verificaSiEstaEntreDos(num, 0.96, 0.99)){
-            demandaDiaria=7;
-        }else if(verificaSiEstaEntreDos(num, 0.99, 1)){
-            demandaDiaria=8;
+        if(verificaSiEstaEntreDos(num, 0.0, 0.02)){
+            demandaDiaria=25;
+        }else if(verificaSiEstaEntreDos(num, 0.02, 0.06)){
+            demandaDiaria=26;
+        }else if(verificaSiEstaEntreDos(num, 0.06, 0.12)){
+            demandaDiaria=27;
+        }else if(verificaSiEstaEntreDos(num, 0.12, 0.24)){
+            demandaDiaria=28;
+        }else if(verificaSiEstaEntreDos(num, 0.24, 0.44)){
+            demandaDiaria=29;
+        }else if(verificaSiEstaEntreDos(num, 0.44, 0.68)){
+            demandaDiaria=30;
+        }else if(verificaSiEstaEntreDos(num, 0.68, 0.83)){
+            demandaDiaria=31;
+        }else if(verificaSiEstaEntreDos(num, 0.83, 0.93)){
+            demandaDiaria=32;
+        }else if(verificaSiEstaEntreDos(num, 0.93, 0.98)){
+            demandaDiaria=33;
+        }else if(verificaSiEstaEntreDos(num, 0.98, 1)){
+            demandaDiaria=34;
         }
         return demandaDiaria;        
     }
@@ -187,15 +198,33 @@ public class SimulacionEjercicio10 extends Thread{
     private int entregaDias(double num){
         int dias=0;
         
-        if(verificaSiEstaEntreDos(num, 0.0, 0.25)){
+        if(verificaSiEstaEntreDos(num, 0.0, 0.2)){
             dias=1;
-        }else if(verificaSiEstaEntreDos(num, 0.25, 0.75)){
+        }else if(verificaSiEstaEntreDos(num, 0.2, 0.5)){
             dias=2;
-        }else if(verificaSiEstaEntreDos(num, 0.75, 0.95)){
+        }else if(verificaSiEstaEntreDos(num, 0.5, 0.75)){
             dias=3;
-        }else if(verificaSiEstaEntreDos(num, 0.95, 1)){
+        }else if(verificaSiEstaEntreDos(num, 0.75, 1)){
             dias=4;
         }        
+        return dias;
+    }
+    
+    
+    private int esperaDias(double num){
+        int dias=0;
+        
+        if(verificaSiEstaEntreDos(num, 0.0, 0.40)){
+            dias=0;
+        }else if(verificaSiEstaEntreDos(num, 0.40, 0.6)){
+            dias=1;
+        }else if(verificaSiEstaEntreDos(num, 0.6, 0.75)){
+            dias=2;
+        }else if(verificaSiEstaEntreDos(num, 0.75, 0.9)){
+            dias=3;
+        }else if(verificaSiEstaEntreDos(num, 0.9, 1)){
+            dias=4;
+        }          
         return dias;
     }
     
@@ -236,11 +265,11 @@ public class SimulacionEjercicio10 extends Thread{
     }
 
     public int getCostoFaltante() {
-        return costoFaltante;
+        return costoFaltanteSinEspera;
     }
 
     public void setCostoFaltante(int costoFaltante) {
-        this.costoFaltante = costoFaltante;
+        this.costoFaltanteSinEspera = costoFaltante;
     }
 
     public int getCostoInventarioUnidadAnio() {

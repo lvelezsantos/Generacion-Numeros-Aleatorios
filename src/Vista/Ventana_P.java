@@ -57,6 +57,7 @@ public class Ventana_P extends javax.swing.JFrame {
     JPanelEjercicio4 jPanelEjercicio4;
     JPanelSimulacionesEjercicio7 jPanelSimulacionesEjercicio7;
     JPanelEjercicio10 jPanelEjercicio10;
+    JPanelEjercicio11 jPanelEjercicio11;
     ArrayList<Float> numeros;
     gui ejercicio13;
     /** Creates new form Ventana_P */
@@ -86,6 +87,7 @@ public class Ventana_P extends javax.swing.JFrame {
         jPanelSimulacionesEjercicios6 = new JPanelSimulacionesEjercicios_6();
         jPanelSimulacionesEjercicio7 = new JPanelSimulacionesEjercicio7();
         jPanelEjercicio10 = new JPanelEjercicio10();
+        jPanelEjercicio11 = new JPanelEjercicio11();
         numeros = new ArrayList<Float>();
         initComponents();
         this.setSize(800, 700);
@@ -129,6 +131,7 @@ public class Ventana_P extends javax.swing.JFrame {
         jMenuItemEjercicio7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItemEjercicio13 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItemAyuda = new javax.swing.JMenuItem();
@@ -280,6 +283,14 @@ public class Ventana_P extends javax.swing.JFrame {
                 jMenu7ActionPerformed(evt);
             }
         });
+
+        jMenuItem4.setText("Ejercicio 11");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem4);
 
         jMenuItemEjercicio13.setText("Ejercicio 13");
         jMenuItemEjercicio13.addActionListener(new java.awt.event.ActionListener() {
@@ -435,6 +446,10 @@ public class Ventana_P extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItemEjercicio13ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        setPanel(jPanelEjercicio11); 
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -465,6 +480,7 @@ public class Ventana_P extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItemAyuda;
     private javax.swing.JMenuItem jMenuItemEjercicio13;
     private javax.swing.JMenuItem jMenuItemEjercicio6;
