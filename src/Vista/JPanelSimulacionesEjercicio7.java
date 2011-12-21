@@ -66,6 +66,10 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jTextFieldCorridas = new javax.swing.JTextField();
         jButtonSimular = new javax.swing.JButton();
+        jTextFieldRevistasDia1_10 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldRevistas11_30 = new javax.swing.JTextField();
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/iconos/1317343951_project-open.png"))); // NOI18N
         jButton1.setToolTipText("Importar");
@@ -97,16 +101,21 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
         jTextAreaResultados.setToolTipText("Resultados");
         jScrollPaneResultados.setViewportView(jTextAreaResultados);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jCheckBoxRapido.setText("Rapido");
         jCheckBoxRapido.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jCheckBoxRapidoStateChanged(evt);
             }
         });
+        jPanel1.add(jCheckBoxRapido, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 198, 135, -1));
 
         jLabel3.setText("Numero de Corridas");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 140, -1, -1));
 
         jTextFieldCorridas.setDocument(new LimitadorSoloNumerosNumMaxCaracteres(jTextFieldCorridas, 6));
+        jPanel1.add(jTextFieldCorridas, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 164, 140, -1));
 
         jButtonSimular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/iconos/1317344174_play.png"))); // NOI18N
         jButtonSimular.setBorderPainted(false);
@@ -116,39 +125,15 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
                 jButtonSimularActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 232, 135, -1));
+        jPanel1.add(jTextFieldRevistasDia1_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 42, 140, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCorridas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBoxRapido, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addGap(14, 14, 14))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButtonSimular, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldCorridas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBoxRapido)
-                .addGap(82, 82, 82)
-                .addComponent(jButtonSimular)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        jLabel1.setText("Revistas dia 1 - 10");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel5.setText("Revistas dia 11 - 30");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 82, 130, -1));
+        jPanel1.add(jTextFieldRevistas11_30, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 106, 140, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -253,6 +238,8 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
             sim.setBoton(jButtonSimular);
             sim.setListaCorridas(jTextAreaCorridas) ;
             sim.setVelocidad(velocidad);
+            sim.setRevistasCompradasEs1(auxiliares.Auxiliares.convertirStringAEntero(jTextFieldRevistasDia1_10));
+            sim.setRevistasCompradasEs2(auxiliares.Auxiliares.convertirStringAEntero(jTextFieldRevistas11_30));
 
             sim.start();
            
@@ -285,9 +272,11 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSimular;
     private javax.swing.JCheckBox jCheckBoxRapido;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
@@ -297,6 +286,8 @@ public class JPanelSimulacionesEjercicio7 extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextAreaCorridas;
     private javax.swing.JTextArea jTextAreaResultados;
     private javax.swing.JTextField jTextFieldCorridas;
+    private javax.swing.JTextField jTextFieldRevistas11_30;
+    private javax.swing.JTextField jTextFieldRevistasDia1_10;
     // End of variables declaration//GEN-END:variables
 
 }

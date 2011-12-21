@@ -31,16 +31,22 @@ public class SimulacionEjercicio7 extends Thread{
     JProgressBar jp;
     JScrollPane jScrollPaneCorridas;
     int corridas;
+    //sc = se calcula
+    //sp = se pide
+    private int revistasCompradasEs1;//sp
+    private int revistasCompradasEs2;//sp
     private JScrollPane jScrollPaneResultado;
-    private int velocidad;
+    private int velocidad;//sp
     private int revistasVendidasEstrategia1;
+    private int revistasTotales;
+    private int revistasFaltantes;
     private double gananciasEstrategia1;//recaudoVentaTotal1-costoParaElVendedor1
     private double recaudoVentaTotal1;
     private double costoParaElVendedor1;
     private int revistasVendidasEstrategia2;
     private double gananciasEstrategia2;//recaudoVentaTotal2-costoParaElVendedor2
-    private double recaudoVentaTotal2;
-    private double costoParaElVendedor2;
+    private double recaudoVentaTotal2;//se calcula
+    private double costoParaElVendedor2;//
     int numeros=0;
 
     public SimulacionEjercicio7()  {
@@ -68,7 +74,7 @@ public class SimulacionEjercicio7 extends Thread{
             Point p2 = new Point(0,tamanhoTextArea2.height);
             jScrollPaneResultado.getViewport().setViewPosition(p2);
             
-            listaCorridas.append("Corrida "+(i+1)+": "+estrategiaGanadora+"\n");
+            listaCorridas.append("Corrida "+(i)+": "+estrategiaGanadora+"\n");
             Dimension tamanhoTextArea = listaCorridas.getSize();
             Point p = new Point(0,tamanhoTextArea.height);
             jScrollPaneCorridas.getViewport().setViewPosition(p);
@@ -91,36 +97,50 @@ public class SimulacionEjercicio7 extends Thread{
         recaudoVentaTotal1=0;
         revistasVendidasEstrategia1=0;
         gananciasEstrategia1=0;
+        revistasTotales=revistasCompradasEs1;
+        revistasFaltantes=revistasCompradasEs1;
         for(int i=1;i<=10;i++){
             if(numeros>=numeros1.size()){
                 numeros=0;
             }
+            int revistasVendidas=0;
             double numeroGenerado = numeros1.get(numeros);
             
             if(numeroGenerado>=0 &&numeroGenerado<0.05){
-                this.revistasVendidasEstrategia1 +=5;
+                revistasVendidas +=5;
             }else if(numeroGenerado>=0.05 &&numeroGenerado<0.1){
-                this.revistasVendidasEstrategia1 +=6;
+                revistasVendidas +=6;
             }else if(numeroGenerado>=0.1 &&numeroGenerado<0.2){
-                this.revistasVendidasEstrategia1 +=7;
+                revistasVendidas +=7;
             }else if(numeroGenerado>=0.2 &&numeroGenerado<0.35){
-                this.revistasVendidasEstrategia1 +=8;
+                revistasVendidas +=8;
             }else if(numeroGenerado>=0.35 &&numeroGenerado<0.6){
-                this.revistasVendidasEstrategia1 +=9;
+                revistasVendidas +=9;
             }else if(numeroGenerado>=0.6 &&numeroGenerado<0.85){
-                this.revistasVendidasEstrategia1 +=10;
+                revistasVendidas +=10;
             }else if(numeroGenerado>=0.85 &&numeroGenerado<1){
-                this.revistasVendidasEstrategia1 +=11;
+                revistasVendidas +=11;
             }
+            
+            if((revistasVendidasEstrategia1+revistasVendidas)<=revistasCompradasEs1){
+                revistasVendidasEstrategia1+=revistasVendidas;
+            }else{
+                listaResultados.append("No hay suficientes revistas para vender\n");
+            }
+
             listaResultados.append("Numero de revistas vendidas al dia "+i+": "+ this.revistasVendidasEstrategia1+"\n");
             Dimension tamanhoTextArea = listaResultados.getSize();
             Point p = new Point(0,tamanhoTextArea.height);
             jScrollPaneResultado.getViewport().setViewPosition(p);
+            
             numeros++;
         }
-        costoParaElVendedor1=revistasVendidasEstrategia1*1.5;
+        costoParaElVendedor1=revistasCompradasEs1*1.5;
+        
         recaudoVentaTotal1 = revistasVendidasEstrategia1*2;
+        recaudoVentaTotal1+=(revistasCompradasEs1-revistasVendidasEstrategia1)*0.9;
         gananciasEstrategia1=recaudoVentaTotal1-costoParaElVendedor1;
+        revistasFaltantes-=revistasVendidasEstrategia1;
     }
     
     private void estrategia2(){
@@ -128,31 +148,43 @@ public class SimulacionEjercicio7 extends Thread{
         recaudoVentaTotal2=0;
         revistasVendidasEstrategia2=0;
         gananciasEstrategia2=0;
+        revistasTotales+=revistasCompradasEs2;
+        revistasFaltantes+=revistasCompradasEs2;
+        
         for(int i=1;i<=20;i++){
             if(numeros>=numeros1.size()){
                 numeros=0;
             }
             double numeroGenerado = numeros1.get(numeros);
-            
+            int revistasVendidas=0;
             if(numeroGenerado>=0 &&numeroGenerado<0.15){
-                this.revistasVendidasEstrategia2 +=4;
+                revistasVendidas +=4;
             }else if(numeroGenerado>=0.15 &&numeroGenerado<0.35){
-                this.revistasVendidasEstrategia2 +=5;
+                revistasVendidas +=5;
             }else if(numeroGenerado>=0.35 &&numeroGenerado<0.65){
-                this.revistasVendidasEstrategia2 +=6;
+                revistasVendidas +=6;
             }else if(numeroGenerado>=0.65 &&numeroGenerado<0.85){
-                this.revistasVendidasEstrategia2 +=7;
+                revistasVendidas +=7;
             }else if(numeroGenerado>=0.85 &&numeroGenerado<1){
-                this.revistasVendidasEstrategia1 +=8;
+                revistasVendidas +=8;
             }
+            if(revistasFaltantes>=revistasVendidas){
+                revistasVendidasEstrategia2+=revistasVendidas;
+                revistasFaltantes -=revistasVendidas;
+            }else{
+                listaResultados.append("No hay suficientes revistas para vender\n");
+            }
+            
             listaResultados.append("Numero de revistas vendidas al dia "+(i+10)+": "+ this.revistasVendidasEstrategia2+"\n");
             Dimension tamanhoTextArea = listaResultados.getSize();
             Point p = new Point(0,tamanhoTextArea.height);
             jScrollPaneResultado.getViewport().setViewPosition(p);
             numeros++;
         }
-        costoParaElVendedor2=revistasVendidasEstrategia2*1.2;
+        
+        costoParaElVendedor2=revistasCompradasEs2*1.2;
         recaudoVentaTotal2 = revistasVendidasEstrategia2*2;
+        recaudoVentaTotal2 += (revistasTotales-revistasVendidasEstrategia1-revistasVendidasEstrategia2)*0.6;
         gananciasEstrategia2=recaudoVentaTotal2-costoParaElVendedor2;
     }
     
@@ -247,6 +279,22 @@ public class SimulacionEjercicio7 extends Thread{
     public void setjScrollPaneCorridas(JScrollPane jScrollPaneCorridas) {
         this.jScrollPaneCorridas = jScrollPaneCorridas;
     }
-    
 
+    public int getRevistasCompradasEs1() {
+        return revistasCompradasEs1;
+    }
+
+    public void setRevistasCompradasEs1(int revistasCompradasEs1) {
+        this.revistasCompradasEs1 = revistasCompradasEs1;
+    }
+
+    public int getRevistasCompradasEs2() {
+        return revistasCompradasEs2;
+    }
+
+    public void setRevistasCompradasEs2(int revistasCompradasEs2) {
+        this.revistasCompradasEs2 = revistasCompradasEs2;
+    }
+    
+    
 }
